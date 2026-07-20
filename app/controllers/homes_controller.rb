@@ -1,10 +1,9 @@
 class HomesController < ApplicationController
-allow_unauthenticated_access #この行を追加
+  allow_unauthenticated_access
 
   def top
   end
 
   def about
   end
-  
 end

@@ -9,7 +9,9 @@ class PostImagesController < ApplicationController
 
   def show
     @post_image = PostImage.find(params[:id])
+    @user = @post_image.user
   end
+
 
   def create
     @post_image = PostImage.new(post_image_params)
