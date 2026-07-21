@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update] , path_names: { new: 'sign_up' }
 
   resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+    resource :favorite, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
  
