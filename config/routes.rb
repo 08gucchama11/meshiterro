@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :post_images, only: [:new, :create, :index, :show, :destroy] , path_names: { new: 'sign_up' }
   # ユーザー登録（サインアップ）のためのルーティングを追加
   resources :users, only: [:new, :create, :show, :edit, :update] , path_names: { new: 'sign_up' }
+
+  resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+    resources :post_comments, only: [:create, :destroy]
+  end
  
   resource :session
   resources :passwords, param: :token
